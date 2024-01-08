@@ -22,7 +22,7 @@ function App() {
 //   }, [])
   
   return  (
-    <div>
+    <div className='bg-custom'>
       <div >
         <Navbar />
         <main>

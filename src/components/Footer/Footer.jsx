@@ -1,8 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-function Footer() {
 
+function Footer() {
+  const authStatus = useSelector((state) => state.auth.status)
   return (
     <>
       <div className='bg-[#031B34] text-white px-12 py-16'>
@@ -13,9 +15,12 @@ function Footer() {
         </div>
         <div className='flex justify-center items-center pt-20 pb-20'>
           <button className='border-2 p-6'>
-            <Link to='/contact'>
+            {authStatus ? <Link to='/contact'>
+              Connect with us 
+            </Link> : <Link to='/login'>
               Connect with us 
             </Link>
+            }
           </button>
         </div>
         <div>

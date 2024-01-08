@@ -94,9 +94,9 @@ function Navbar() {
               </Button>
             ): null)}
             {authStatus && (
-              <li>
+              <>
                 <LogoutBtn />
-              </li>
+              </>
             )}
       </div>
      </div>
