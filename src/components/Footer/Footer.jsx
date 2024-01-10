@@ -16,7 +16,7 @@ function Footer() {
         <div className='flex justify-center items-center pt-20 pb-20'>
           <button className='border-2 p-6'>
             {authStatus ? <Link to='/contact'>
-              Connect with us 
+              Contact us 
             </Link> : <Link to='/login'>
               Connect with us 
             </Link>

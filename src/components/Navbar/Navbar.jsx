@@ -18,7 +18,12 @@ function Navbar() {
       name: 'Home',
       slug: "/",
       active: true
-    }, 
+    },
+    {
+      name: "Contect Us",
+      slug: "/contact",
+      active:true
+    },
   {
       name: "All Posts",
       slug: "/all-posts",
@@ -74,7 +79,7 @@ function Navbar() {
 
   return (
     <>
-     <div className='w-full flex justify-between items-center p-2 bg-black text-white'>
+     <div className='w-full flex justify-between items-center p-2 text-white'>
       <div className='p-4 text-2xl'>
         <strong>Logo</strong>
       </div>
