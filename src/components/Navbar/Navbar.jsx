@@ -4,6 +4,7 @@ import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import Button from '../Button'
 import { useSelector } from 'react-redux';
 import LogoutBtn from '../LogoutBtn'
+import Logo from '../Logo';
 
 function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -81,7 +82,7 @@ function Navbar() {
     <>
      <div className='w-full flex justify-between items-center p-2 text-white'>
       <div className='p-4 text-2xl'>
-        <strong>Logo</strong>
+        <Logo/>
       </div>
       <div className='flex justify-evenly gap-20 max-lg:hidden'>
       {navItems.map((item) => item.active ? (
