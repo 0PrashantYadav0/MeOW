@@ -18,7 +18,10 @@ function Header() {
         <div>
         <div className="flex">
           <input className="border-none bg-[#0e1d2b] text-white w-full p-4 h-16 rounded-l-lg" placeholder="Enter Your Email"  type="text"/>
-          <button className=" bg-[#ff4820] text-white m-0 p-4 w-1/3 h-16 text-sm rounded-r-lg" onClick={() => navigate("/login")}>Get Started</button>
+          <button className=" bg-[#ff4820] text-white m-0 p-4 w-1/3 h-16 text-sm rounded-r-lg" onClick={()=> {
+              navigate("/login")
+              window.scrollTo(0, 0);
+            }}>Get Started</button>
         </div>
         <div className="py-12 flex">
           <img src={people} alt="poeple" className="max-md:w-full"/>

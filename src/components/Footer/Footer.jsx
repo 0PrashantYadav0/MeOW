@@ -1,10 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function Footer() {
-  const authStatus = useSelector((state) => state.auth.status)
+  const authStatus = useSelector((state) => state.auth.status);
+  const navigate = useNavigate();
+  const submit = (to) => {
+    navigate(to);
+  }
   return (
     <>
       <div className='bg-[#031B34] text-white px-12 py-16'>
@@ -15,11 +19,17 @@ function Footer() {
         </div>
         <div className='flex justify-center items-center pt-20 pb-20'>
           <button className='border-2 p-6'>
-            {authStatus ? <Link to='/contact'>
+            {authStatus ? <button onClick={() => {
+              navigate("/contact");
+              window.scrollTo(0, 0);
+            }}>
               Contact us 
-            </Link> : <Link to='/login'>
+            </button> : <button onClick={()=> {
+              navigate("/signup")
+              window.scrollTo(0, 0);
+            }}>
               Connect with us 
-            </Link>
+            </button>
             }
           </button>
         </div>

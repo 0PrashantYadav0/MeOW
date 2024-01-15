@@ -12,7 +12,6 @@ function Navbar() {
   const navigate = useNavigate();
   const authStatus = useSelector((state) => state.auth.status)
 
-  const [active, setActive] = useState("Home");
 
   const navItems = [
     {
@@ -21,7 +20,7 @@ function Navbar() {
       active: true
     },
     {
-      name: "Contect Us",
+      name: "Contact Us",
       slug: "/contact",
       active:true
     },
@@ -56,7 +55,7 @@ function Navbar() {
         <div className='bg-[#031B34] text-white p-8 text-end flex flex-col justify-end items-end'>
           {navItems.map((item) => item.active ? (
             <p className='py-2 text-xl' key={item.slug}>
-              <Link to={item.slug}>
+              <Link to={item.slug} onClick={()=>{setToggleMenu(false)}}>
                 {item.name}
               </Link>
             </p>

@@ -11,7 +11,10 @@ function Bar({text, buttontext, to="/login"}) {
       <p className='text-xl font-semibold pb-5'>
       {text ? text : "Register Today & start exploring the endless possibilities."}
       </p>
-      <button className='bg-black py-4 px-12 font-semibold rounded-full mb-5' onClick={() => navigate(`${to}`)}>{ buttontext ? buttontext : "Get Started" }</button>
+      <button className='bg-black py-4 px-12 font-semibold rounded-full mb-5' onClick={()=> {
+              navigate(`${to}`)
+              window.scrollTo(0, 0);
+            }}>{ buttontext ? buttontext : "Get Started" }</button>
       </div>
     </div>
     </>
