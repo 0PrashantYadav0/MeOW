@@ -33,7 +33,7 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="p-8 text-white">
+        <div className="p-8 text-white bg-custom m-4 rounded-xl">
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
                         src={service.getFilePreview(post.featuredImage)}
@@ -44,11 +44,11 @@ export default function Post() {
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
+                                <Button  className="mr-3 bg-green-500">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-500" onClick={deletePost}>
+                            <Button className="bg-red-500" onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>

@@ -68,9 +68,9 @@ function Navbar() {
               </Button>
             ): null)}
             {authStatus && (
-              <li>
+              <p>
                 <LogoutBtn />
-              </li>
+              </p>
             )}
           </div>
         </div>}
@@ -85,7 +85,7 @@ function Navbar() {
       </div>
       <div className='flex justify-evenly gap-20 max-lg:hidden'>
       {navItems.map((item) => item.active ? (
-            <p>
+            <p key={item.slug}>
               <Link to={item.slug}>
                 {item.name}
               </Link>
@@ -94,7 +94,7 @@ function Navbar() {
       </div>
       <div className='flex justify-evenly gap-12 px-10 max-sm:hidden max-lg:pr-20'>
       {navBtn.map((btn) => btn.active ? (
-              <Button onClick={() => navigate(btn.slug)}>
+              <Button onClick={() => navigate(btn.slug)} key={btn.slug}>
                  { btn.name }
               </Button>
             ): null)}
