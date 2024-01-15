@@ -13,7 +13,7 @@ function Header() {
       <div className="px-4">
         <h1 className='bg-text text-7xl font-semibold py-8 text-start max-lg:text-4xl'><strong>MeOW</strong><br/> Explore, engage, and be inspired!</h1>
         <p className="text-[#81afdd] mb-7">
-        Embark on a journey through captivating narratives and thought-provoking insights at <strong>MeOW</strong>. Explore a world of diverse topics, from lifestyle and tech to travel and beyond. Uncover inspiration in every click and join a community that celebrates the beauty of words. Start your adventure today!
+        Welcome to MeOW – where joy finds a voice! Share your moments of positivity and inspiration in brief posts. Celebrate the good things in life, no matter how small. Join our community, spread smiles, and create a MeOWmentum of optimism together! 🌟 #MeOWmoments #PositivityUnleashed
         </p>
         <div>
         <div className="flex">
