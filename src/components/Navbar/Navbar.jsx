@@ -50,7 +50,7 @@ function Navbar() {
   ]
 
   const MenuBlock = ({toggleMenu}) =>{
-    return (<div className='absolute right-0 top-20 hidden max-lg:block'>
+    return (<div className='absolute right-0 top-20 hidden max-lg:block z-20'>
         {toggleMenu && 
         <div className='bg-[#031B34] text-white p-8 text-end flex flex-col justify-end items-end'>
           {navItems.map((item) => item.active ? (
