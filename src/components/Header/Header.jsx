@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import ai from "../../assets/ai.png";
+import ai from "../../../GSlogo.webp";
 import people from "../../assets/people.png";
 import Links from "../Links";
 
@@ -26,7 +26,7 @@ function Header() {
         </div>
         </div>
       </div>
-      <div>
+      <div className="w-full">
         <img src={ai} alt="ai" className="w-full"/>
       </div>
     </div>
