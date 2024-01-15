@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input, RTE, Select } from "..";
 import service from "../../appwrite/service";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function PostForm({ post }) {
+    const [loading, setLoading] = useState("");
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
@@ -19,6 +20,7 @@ export default function PostForm({ post }) {
     const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
+        setLoading("Uploading...");
         if (post) {
             const file = data.image[0] ? await service.uploadFile(data.image[0]) : null;
 
@@ -34,6 +36,7 @@ export default function PostForm({ post }) {
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);
             }
+            setLoading("")
         } else {
             const file = await service.uploadFile(data.image[0]);
 
@@ -46,6 +49,7 @@ export default function PostForm({ post }) {
                     navigate(`/post/${dbPost.$id}`);
                 }
             }
+            setLoading("")
         }
     };
 
@@ -113,7 +117,7 @@ export default function PostForm({ post }) {
                     {...register("status", { required: true })}
                 />
                 <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
-                    {post ? "Update" : "Submit"}
+                    {loading ? loading : post ? "Update" : "Submit"}
                 </Button>
             </div>
             <div className="w-full">

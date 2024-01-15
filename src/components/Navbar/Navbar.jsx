@@ -55,7 +55,7 @@ function Navbar() {
         {toggleMenu && 
         <div className='bg-[#031B34] text-white p-8 text-end flex flex-col justify-end items-end'>
           {navItems.map((item) => item.active ? (
-            <p className='py-2 text-xl'>
+            <p className='py-2 text-xl' key={item.slug}>
               <Link to={item.slug}>
                 {item.name}
               </Link>

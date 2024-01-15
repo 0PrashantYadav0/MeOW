@@ -8,6 +8,7 @@ import {useDispatch} from 'react-redux'
 import {useForm} from 'react-hook-form'
 
 function Signup() {
+    const [loading, setLoading] = useState("");
     const navigate = useNavigate()
     const [error, setError] = useState("")
     const dispatch = useDispatch()
@@ -15,6 +16,7 @@ function Signup() {
 
     const create = async(data) => {
         setError("")
+        setLoading("wait...")
         try {
             const userData = await authService.createAccount(data)
             if (userData) {
@@ -25,6 +27,7 @@ function Signup() {
         } catch (error) {
             setError(error.message)
         }
+        setLoading("")
     }
 
   return (
@@ -76,7 +79,7 @@ function Signup() {
                             required: true,})}
                         />
                         <Button type="submit" className="w-full bg-gray-300 hover:bg-gray-500">
-                            Create Account
+                        {loading ? loading :"Create Account"}
                         </Button>
                     </div>
                 </form>

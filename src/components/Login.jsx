@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import Logo from "./Logo";
 
 function Login() {
+  const [loading, setLoading] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
@@ -16,6 +17,7 @@ function Login() {
 
   const login = async (data) => {
     setError("");
+    setLoading("wait...")
     try {
       const session = await authService.login(data);
       if (session) {
@@ -26,6 +28,7 @@ function Login() {
     } catch (error) {
       setError(error.message);
     }
+    setLoading("")
   };
 
   return (
@@ -73,7 +76,7 @@ function Login() {
               })}
             />
             <Button type="submit" className="w-full bg-gray-300 hover:bg-gray-400">
-              Sign in
+              {loading ? loading :"Sign in"}
             </Button>
           </div>
         </form>
