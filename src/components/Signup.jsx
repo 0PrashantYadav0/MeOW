@@ -4,6 +4,7 @@ import {Link ,useNavigate} from 'react-router-dom'
 import {login} from '../store/authSlice'
 import Button from './Button'
 import Input from './Input'
+import Logo from "./Logo"
 import {useDispatch} from 'react-redux'
 import {useForm} from 'react-hook-form'
 
@@ -35,7 +36,7 @@ function Signup() {
             <div className="mx-auto w-full max-w-lg rounded-xl p-10 shadow-lg bg-gray-100">
             <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
-                        Logo
+                        <Logo/>
                     </span>
                 </div>
                 <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
